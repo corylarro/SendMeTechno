@@ -1,25 +1,29 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+import TechnoButton from "./components/TechnoButton";
+import TechnoPlayer from "./components/TechnoPlayer";
 
-function App() {
+
+const App = () => {
+  const [videoUrl, setVideoUrl] = useState("");
+
+  const handleTechnoSelected = (videoUrl) => {
+    setVideoUrl(videoUrl);
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div 
+      style={{
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "center",
+        justifyContent: "center",
+        height: "100vh",
+      }}
+    >
+        <TechnoButton onTechnoSelected={handleTechnoSelected} />
+        <TechnoPlayer videoUrl={videoUrl} />
     </div>
   );
-}
+};
 
 export default App;
