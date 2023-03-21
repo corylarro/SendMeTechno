@@ -11,11 +11,13 @@ const TechnoPlayer = ({ videoUrl }) => {
     >
       {videoUrl && (
         <iframe
-          width="560"
-          height="315"
-          src={videoUrl}
-          title="Techno Player"
-          allowFullScreen
+        title="techno-video"
+        src={videoUrl}
+        width="100%"
+        height="auto"
+        style={{ display: "block", margin: "0 auto" }}
+        allowFullScreen
+        allow="autoplay"
         />
       )}
     </div>
