@@ -1,7 +1,13 @@
 import React, { useState } from "react";
 import axios from "axios";
-import config, { API_KEY } from "../config";
+// import config, { API_KEY } from "../config";
 import '../styles.css'
+
+
+require('dotenv').config();
+
+
+const API_KEY = process.env.REACT_APP_API_KEY;
 
 const TechnoButton = () => {
   const [videoUrl, setVideoUrl] = useState("");
