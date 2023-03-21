@@ -59,9 +59,10 @@ const TechnoButton = () => {
         }}>
           <iframe
             title="techno-video"
-            width="560"
-            height="315"
             src={videoUrl}
+            width="100%"
+            height="auto"
+            style={{ display: "block", margin: "0 auto" }}
             allowFullScreen
             allow="autoplay"
           />
