@@ -16,7 +16,7 @@ const TechnoButton = () => {
   const handleClick = async () => {
     try {
       const response = await axios.get(
-        `https://www.googleapis.com/youtube/v3/search?part=snippet&type=video&q=techno+set&key=${API_KEY}`
+        `https://www.googleapis.com/youtube/v3/search?part=snippet&type=video&q=techno+set&key=${API_KEY}&maxResults=15`
       );
       const videoId =
         response.data.items[
