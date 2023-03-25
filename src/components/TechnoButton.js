@@ -9,14 +9,18 @@ require('dotenv').config();
 
 const API_KEY = process.env.REACT_APP_API_KEY;
 
+const searchTerms = ["techno+set", "hard+techno", "minimal+techno", "boris+brejcha", "hor+berlin", "boilerroom+techno"];
+
 const TechnoButton = () => {
   const [videoUrl, setVideoUrl] = useState("");
   const [buttonClicked, setButtonClicked] = useState(false);
 
   const handleClick = async () => {
     try {
+      const searchTerm =
+        searchTerms[Math.floor(Math.random() * searchTerms.length)];
       const response = await axios.get(
-        `https://www.googleapis.com/youtube/v3/search?part=snippet&type=video&q=techno+set&key=${API_KEY}&maxResults=15`
+        `https://www.googleapis.com/youtube/v3/search?part=snippet&type=video&q=${searchTerm}&key=${API_KEY}&maxResults=15`
       );
       const videoId =
         response.data.items[
